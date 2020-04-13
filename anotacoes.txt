@@ -1,0 +1,101 @@
+====================================================================
+========================= CAPÍTULO 2 ===============================
+====================================================================
+
+========================= TIPOS PRIMITIVOS =========================
+
+boolean  // tamanho: 1 byte
+byte     // tamanho: 1 byte
+short    // tamanho: 2 byte
+char     // tamanho: 2 byte
+int      // tamanho: 4 byte
+float    // tamanho: 4 byte
+long     // tamanho: 8 byte
+double   // tamanho: 8 byte
+        
+
+
+========================= TIPOS NÃO PRIMITIVOS =========================
+
+String texto = "Eu sou uma String";
+System.out.println(texto);
+
+
+
+========================= CASTING ========================= 
+
+Posso atriuir valores de um tipo de tamnho menor à tipos de tamanhos maiores, mas não o contrário. Por isso o casting, mas devo tomar cuidado.
+
+    double outroLivroJava8 = 60;
+    int numeroInteiro = (int) outroLivroJava8;
+    System.out.println(numeroInteiro);
+        
+Caso o valor da váriavel seja com ponto flutuante, o numero atribuído será apenas o que está antes do ponto flutuante.
+
+    double numeroFlutuante = 59.90;
+    int recebeNumeroFlutuante = (int) numeroFlutuante;
+    System.out.println(recebeNumeroFlutuante); // O número que será impresso é 59
+
+
+
+========================= CONDICIONAIS ========================= 
+Posso utilizar a condição do if na forma normal, ou em operador ternário. Não há nenhuma vantagem usar uma ou outra estratégia, e, nesse caso, o que vale é a legibilidade do código. O modo ternário deixaria o código mais complexo.
+Exemplo: 
+    
+    NORMAL:
+        double valor = 0;
+        if(v1 > v2) {
+            valor = 100;
+        } else {
+            valor = 0;
+        }
+
+    TERNÁRIO:
+        double valor = v1 > v2 ? 100 : 0;
+
+
+
+
+========================= LOOPINGS ========================= 
+WHILE:
+
+    while (CONDIÇÃO) {}
+
+FOR:
+
+    for(INICIALIZAÇÃO; CONDIÇÃO; ATUALIZAÇÃO){}
+
+========================= OPERADOR UNÁRIO ========================= 
+x++
+
+
+========================= CONTINUE E BREAK ========================= 
+CONTINUE:
+    Usado para pular uma interação de um looping e forçar a execução do próximo laço.
+    Exemplo:
+        // Vai imprirmir todos os números de 0 a 10, exceto o 7 que será pulado.
+        for(int i; i <= 10; i++){
+            if(i == 7){
+                continue;
+            }
+            System.out.println(i);
+        }
+
+BREAK:
+    Usado para finalizar uma execução de um looping dada uma determinada condição.
+    Exemplo:
+        // Vai imprirmir de 0 a 6 apenas.
+        for(int i; i <= 10; i++){
+            if(i == 7){
+                break;
+            }
+            System.out.println(i);
+        }
+
+
+
+========================= OPERADORES LÓGICOS ========================= 
+&& (and)     - 
+|| (or)      -
+! (negative) - 
+
