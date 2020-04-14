@@ -99,3 +99,16 @@ BREAK:
 || (or)      -
 ! (negative) - 
 
+
+
+
+====================================================================
+========================= CAPÍTULO 3 ===============================
+====================================================================
+
+- O paradigma de Orientação a objetos é basicamente ter bem definido a responsabilidade do que cada estado e comportamento vai ter.
+
+- O paradigma procedural é a forma "macarrônica" de programar, onde tudo está bagunçado, comportamentos e estados com múltiplas responsabilidades, complicando muito a legibilidade do cógido.  
+
+- Uma das vantagens da OO, é que temos uma forma forte de criar conexão entre informações e funcionalidades.
+
