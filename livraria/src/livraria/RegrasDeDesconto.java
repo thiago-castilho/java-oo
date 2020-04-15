@@ -7,8 +7,8 @@ public class RegrasDeDesconto {
         Autor autor = new Autor();
         autor.setNome("Thiago Castilho");
 
-        Livro livro = new Livro(autor);
-        livro.setValor(59.90);
+        Livro livro = new MiniLivro(autor);
+        livro.setValor(39.90);
 
         if (!livro.aplicaDescontoDe(0.3)) {
             System.out.println("Desconto não pode ser maior do que 30%");

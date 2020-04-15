@@ -151,7 +151,7 @@ double...........................0.0d
 
 
 ====================================================================
-========================= CAPÍTULO 4 ===============================
+========================= CAPÍTULO 5 ===============================
 ====================================================================
 
 No Java, não é possível herdar múltiplas classes. Mas é totalmente possível herdar uma classe, que herda de  uma outra. 
@@ -165,3 +165,33 @@ Polimorfismo: No caso dos livros (impresso e ebook) ambos são livros, mas com r
 
 Herança ou composição? 
 Sempre que possível, devemos favorecer a composição. O uso da herança aumenta bastante o acoplamento das classes, e de alguma forma, sempre acaba comprometendo o encapsulamento
+
+
+
+
+====================================================================
+========================= CAPÍTULO 6 ===============================
+====================================================================
+
+Abstract: Torna uma classe abstrata, impedindo-a de ser instanciada.
+
+Por que a classe Livro existe se não podemos mais instanciá-la?
+Porque ela idealiza tudo o que um Livro tem, e está sendo útil isolando todos os atributos e comportamentos que são um padrão entre os diferentes tipos de livro. Com isso, ela passa a servir apenas para herança e polimorfismo.
+
+Uma observação importante: Mesmo não sendo possível instanciar uma classe abstrata, ainda podemos usá-la como referência.
+
+Quando uma classe deve ser abstrata?
+No planejamento da hieranquia e herança, veremos que algumas classes são muito específicas e que jamais deveriam ser instanciadas. Como exemplo, a classe Animal. Ela pode definir tudo o que os animais tem em comum, mas cada tipo de Animal tem suas particularidades e deve ser representado de uma forma própria.
+
+Método abstrato: Toda classe abstrata pode ter métodos abstratos. Eles servem para obrigar suas classes filhas a implementá-los, caso contrário, o código não compilará.
+
+Classe concreta: Classe não abstrata.
+
+Algumas regras de uma classe abstrata:
+    - Uma classe pode ser abstrata sem ter nenhum método abstrato. A partir do momento em que ela se tornar abstrata, nenhum código poderá mais instanciá-la.
+
+    - Se você declarar um método abstrato, precisará tornar a classe abstrata também! Você não pode ter métodos abstratos em uma classe concreta (classe não abstrata).
+
+    - Uma classe abstrata pode ter métodos abstratos e não abstratos (concretos).
+
+    - Toda classe filha (subclasse) precisa implementar os métodos abstratos da classe pai (superclasse). A não ser que ela também seja abstrata.  
