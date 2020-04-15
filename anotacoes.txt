@@ -112,3 +112,37 @@ BREAK:
 
 - Uma das vantagens da OO, é que temos uma forma forte de criar conexão entre informações e funcionalidades.
 
+
+
+
+====================================================================
+========================= CAPÍTULO 4 ===============================
+====================================================================
+
+========================= CÓDIGO FLEXIVEL E REAPROVEITÁVEL =========================
+
+Deve-se sempre evitar deixar informações tão específicas em classes modelos (Livro; Autor - por exemplo), além de não sobrecarregá-los com comportamentos que não deveriam ser de sua responsabilidade.
+
+Modificador de acesso/visibilidade "private" restring o acesso de determinado estado, deixando-o visível apenas à classe correspondente.
+Quando usar um atributo com modificador "private" ? A resposta é simples: SEMPRE!Todo atributo de classe deve ser privado, assim garantimos que ninguém os acesse diretamente e viole as nossas regras de negócio.
+
+
+========================= CÓDIGO ENCAPSULADO =========================
+Encapsular: Nada mais do que esconder como funcionam as minhas regras de negócio, os meus métodos.
+
+'O que esse código faz?'
+'Como esse código faz?'
+
+Como saber se meu código está bem encapsulado? É bem simples. Devo saber responder somente a primeira pergunta acima.
+
+Valor default de cada tipo primitivo:
+
+boolean..........................false
+byte.............................0
+short............................0
+char............................."\u0000"
+int..............................0
+float............................0.0f
+long.............................0l
+double...........................0.0d
+
