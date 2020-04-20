@@ -14,6 +14,10 @@ public class RegistroDeVendas {
         ebook.setNome("Test Driven Development");
         ebook.setValor(29.90);
 
+
+        if (fisico.aplicaDescontoDe10Porcento()) {
+            System.out.println("Valor agora é: " + fisico.getValor());
+        }
         CarrinhoDeCompras carrinho = new CarrinhoDeCompras();
         carrinho.adiciona(fisico);
         carrinho.adiciona(ebook);
