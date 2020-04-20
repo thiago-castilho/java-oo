@@ -218,3 +218,17 @@ INTERFACE FUNCIONAL
 São as interfaces que possuem apenas um método. 
 Podemos marcar uma interface funcional com a anotação @FunctionalInterface. Vale ressaltar que, caso a classe esteja com esta anotação, se adicionarmos um novo método, a classe deixará de ser compilada lançando um erro.
 Um observação: Se adicionarmos métodos concretos, isso não influenciará em ela ser ou não uma interface funcional. Apenas métodos abstratos são considerados.
+
+Métodos defaults foram adicionados para permitir que interfaces evoluam sem quebrar códigos existentes. E não para permitir alguma variação de herança múltipla ou de mix-ins.
+
+
+====================================================================
+========================= CAPÍTULO 8 ===============================
+====================================================================
+
+Modificadores de acesso:
+    Private   - Esse modificador de acesso torna classes, atributos, métodos ou construtores visíveis apenas para a própria clase.
+    Default   - Apenas classes do mesmo pacote podem ter acesso aos atributos, construtores, métodos ou classes com a ausência de um modificador de acesso.
+    Protected - Todo elemento que for protected ficará visível para a própria classe, para suas classes filhas e também para quem estiver no mesmo pacote. 
+    Public    - Pode ser acessada por qualquer outra classe presente no mesmo projeto. O mesmo vale para atributos, métodos e construtores.
+    
