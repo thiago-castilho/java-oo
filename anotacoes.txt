@@ -195,3 +195,26 @@ Algumas regras de uma classe abstrata:
     - Uma classe abstrata pode ter métodos abstratos e não abstratos (concretos).
 
     - Toda classe filha (subclasse) precisa implementar os métodos abstratos da classe pai (superclasse). A não ser que ela também seja abstrata.  
+    
+
+====================================================================
+========================= CAPÍTULO 7 ===============================
+====================================================================
+
+Interface: É como um contrato Java.
+
+Todo método sem corpo, é abstrato. Isso torna o uso da palavra "abstract" opcional na assinatura do método. O mesmo acontece ao modificador "public". Por padrão, todo método de uma interface é público.
+
+Uma interface não pode ter atributos, e nem métodos concretos (métodos com implementação) [isso até a versão 1.7, a partir da 1.8 isso muda um pouco].
+
+Podemos utilizar o polimorfismo com interfaces. No método adiciona() por exemplo, ao invés de colocar apenas Livros, posso colocar a interface <<Produto>> que é implementada tanto em Livro quanto em Revista.
+
+Sempre podemos/devemos favorecer interfaces para criar polimorfismo entre as classes, o código fica muito mais flexível e com pouquíssimo acoplamento. Para inserir mais de uma interface em uma classe, utiliza-se a vírgula como separador.
+
+INTERFACE NO JAVA 8
+A partir de o java 8, uma interface agora pode ter métodos concretos (métodos com implementação), com isso, suas implementações não são obrigadas a reescrevê-lo. Esse novo recurso é conhecido como default method. Basta utilizar a palavra "default" no início da declaração do método para que ele possa ter código implementado.
+
+INTERFACE FUNCIONAL
+São as interfaces que possuem apenas um método. 
+Podemos marcar uma interface funcional com a anotação @FunctionalInterface. Vale ressaltar que, caso a classe esteja com esta anotação, se adicionarmos um novo método, a classe deixará de ser compilada lançando um erro.
+Um observação: Se adicionarmos métodos concretos, isso não influenciará em ela ser ou não uma interface funcional. Apenas métodos abstratos são considerados.
