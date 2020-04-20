@@ -1,4 +1,6 @@
-package livraria;
+package br.com.casadocodigo.livraria.produtos;
+
+import br.com.casadocodigo.livraria.Autor;
 
 public class LivroFisico extends Livro implements Promocional {
 
