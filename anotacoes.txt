@@ -232,3 +232,56 @@ Modificadores de acesso:
     Protected - Todo elemento que for protected ficará visível para a própria classe, para suas classes filhas e também para quem estiver no mesmo pacote. 
     Public    - Pode ser acessada por qualquer outra classe presente no mesmo projeto. O mesmo vale para atributos, métodos e construtores.
     
+
+
+====================================================================
+========================= CAPÍTULO 9 ===============================
+====================================================================
+Tomar cuidado com <= e < em iterações de array, pois o primeiro modo, percorre o tamanho total do array. E arrays começam da posição 0. Se não utilizar corretamente, posso receber a exception ArrayIndexOutOfBoundsException por exemplo. Para não me preocupar com isso, posso utilizar o novo recurso do java: enhanced-for.
+
+try/catch: utilizado para executar um bloco de código de risco, e capturar caso ocorra uma exception neste bloco, evitando que a stacktrace seja exibida para o usuário final e a exceção pare a execução do código.
+Quando uma exceção é capturada, o código continuar sendo executado normalmente. Caso não fosse tratada, o código pararia na hora em que a exception pipocasse.
+
+multicatch do java 7: dá pra configurar mais de uma exception no mesmo catch utilizando o operador |.
+
+Em situações em que precisamos executar um código, pipocando ou não uma exception, podemos utilizar o finally para ganrantir esta execução.
+
+Unchecked exceptions: não herdam diretamente da classe Exception, e sim de sua filha RuntimeException. Como: NullPointerException, ClassCastException, ArrayIndexOutOfBoundsException...
+
+Checked exceptions: operação de risco que não pode ser facilmente evitada (um arquivo pode não existir, por exemplo). Um exemplo prático seria:
+
+new java.io.FileInputStream("arquivo.txt");
+
+O erro será "Unhandled exception type FileNotFoundException". O compilador checou que ela não foi tratada.
+
+Para que seja compilado, poderiamos fazer assim:
+try{ 
+    new java.io.FileInputStream("arquivo.txt");
+} catch(FileNotFoundException e1) {
+    System.out.println("Não consegui abrir o arquivo");
+}
+
+Repare o método:
+
+public void abreArquivo() throws FileNotFoundException {
+    new java.io.FileInputStream("arquivo.txt");
+}
+
+Uma alternativa neste caso, seria adicionar o throws FileNotFoundException. Ele diz basicamente o seguinte: "Ei, esse é um código de risco, ele pode lançar uma FileNotFoundException".
+ 
+Tratando-o ao ser chamado: 
+public static void main(String... args) {
+    try{
+        abreArquivo();
+    }catch (FileNotFoundException e1) {
+        System.out.println("Não consegui abrir o arquivo");
+    }
+}
+
+Ou posso simplesmente adicionar throws no meto main e não tratar esta exception, deixando passar para a JVM.
+
+throw vs throws
+throw: é quando estou lançando efetivamente uma exception.
+throws: é apenas um informativo de que o bloco de código pode lançar uma exception.
+
+Throwable: Exception e Error herdam de Throwable.
