@@ -21,7 +21,7 @@ public class CadastroDeLivros {
         livro.setValor(59.90);
         livro.setIsbn("978-85-66250-46-6");
 
-        livro.mostraDetalhes();
+        livro.toString();
 
 
         Autor outroAutor = new Autor();
@@ -37,7 +37,7 @@ public class CadastroDeLivros {
         outroLivro.setValor(59.90);
         outroLivro.setIsbn("978-85-66250-22-0");
 
-        outroLivro.mostraDetalhes();
+        outroLivro.toString();
 
 
     }

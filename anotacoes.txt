@@ -237,6 +237,7 @@ Modificadores de acesso:
 ====================================================================
 ========================= CAPÍTULO 9 ===============================
 ====================================================================
+
 Tomar cuidado com <= e < em iterações de array, pois o primeiro modo, percorre o tamanho total do array. E arrays começam da posição 0. Se não utilizar corretamente, posso receber a exception ArrayIndexOutOfBoundsException por exemplo. Para não me preocupar com isso, posso utilizar o novo recurso do java: enhanced-for.
 
 try/catch: utilizado para executar um bloco de código de risco, e capturar caso ocorra uma exception neste bloco, evitando que a stacktrace seja exibida para o usuário final e a exceção pare a execução do código.
@@ -285,3 +286,87 @@ throw: é quando estou lançando efetivamente uma exception.
 throws: é apenas um informativo de que o bloco de código pode lançar uma exception.
 
 Throwable: Exception e Error herdam de Throwable.
+
+
+=====================================================================
+========================= CAPÍTULO 10 ===============================
+=====================================================================
+
+Todas as classes em Java herdam de Object. 
+
+Se todas as classes herdam de Object, por quê não mudar a classe CarrinhoDeCompras para receber e acumular Object?
+1 - Ela poderia receber qualquer coisa.
+2 - Teriam que ser feitos muitos castings, o que deixaria o código mais difício de manter, complexo e ilegível.
+
+Casting: Também é possível fazer em apenas uma linha. Como por exemplo:
+    double valor = ((Produto) object).getValor();
+
+O método toString() é um método que é herdado automaticamente da classe Object. Portanto, podemos sobrescrevê-lo com @Override.
+Também é possível sobrescrever o método equals() para adotar nossa necessidade.
+
+instanceOf: Utilizado para garantir que os parâmetros passados sejam de um tipo específico, caso contrário, lançará uma exception.
+
+hashcode: sempre acompanha o equals (será explicado melhor no próximo capítulo).
+
+getClass().getSimpleName: Retorna o nome da classe sem o fully qualified name (seu pacote). 
+
+===== Wrappers dos tipos primitivos =====
+Tipos primitivos e suas classes wrappers (box), que permitem tratá-los como referência, um Objetc.
+
+boolean === Boolean
+byte    === Byte
+short   === Short
+Char    === Character
+int     === Integer
+float   === Float
+long    === Long
+double  === Double
+
+Para embrulhar, por exemplo: 
+    Object objeto = new Integer(10);
+
+Da mesma forma podemos desembrulhar: 
+    Integer integer = new Integer(10);
+    int valor = integer.intValue();
+
+As classes Wrappers também estão alimentadas com diversos métodos estáticos que facilitam muito nossa vida, como por exemplo a conversão de um valor:
+    boolean resultado = Boolean.parseBoolean("false");
+    byte resultado = Byte.parseByte("false");
+    short resultado = Short.parseShort("false");
+    int resultado = Integer.parseInt("false");
+    long resultado = Long.parseLong("false");
+    float resultado = Float.parseFloat("false");
+    double resultado = Double.parseDouble("false");
+
+Para transformar qualquer um desses métodos em uma String, podemos utilizar:
+    String numeroEmTexto = String.valueOf(10);
+
+Pacote java.lang: Todas as classes e wrappers que estão dentro do pacote java.lang, sãao automaticamente incluídos em todas as minhas classes.
+
+Outra classe muito útil é a Random. Para imprimir um número randômico por exemplo, basta fazer como no código abaixo:
+    Random random = new Random();
+    System.out.println(random.nextInt(10));
+
+E isso serve para todos os tipos primitivos, como nextBoolean ou nextDouble por exemplo.
+
+A classe String:
+    A classe String não é uma classe do tipo primitivo, isso porquê podemos instanciá-la da seguinte forma:
+        String string = new String("Texto");
+    A classe String utiliza de uma otimização denomidada String pool, isso faz com que a JVM crie uma espécie de cache de Strings, onde sempre antes de adicionar em memória, ela consulta essa pool para verificar se não há um String igual que possa ser reutilizada. Para que isso funcionasse bem, o Java não poderia permitir que a mudança no valor de uma String afetasse outras Strings que tivesse o mesmo valor. Com isso, toda String é imutável!
+
+Uma pequena prova, seria tentar trocar o valor de uma String com o método replace(). Por exemplo:
+    
+    String string = "java";
+    string.replace("v", "c");
+    System.out.println(string);
+
+    O valor impresso contunuará sendo 'java'.
+
+Alguns dos mais de 60 métodos:
+    String replace = string.replace("v", "c");
+    String upperCase = string.toUpperCase();
+    String lowerCase = "JAVA".toLowerCase();
+    char charAt = string.charAt(0);
+    boolean endsWith = string.endsWith("a");
+    boolean startsWith = string.startsWith("s");
+    boolean equals = string.equalsIgnoreCase("JAVA");

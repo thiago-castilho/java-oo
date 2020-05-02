@@ -23,18 +23,12 @@ public abstract class Livro implements Produto {
         this.isbn = "000-00-00000-00-0";
     }
 
-    public void mostraDetalhes() {
-        System.out.println("Mostrando detalhes do livro ");
-        System.out.println("Nome: " + nome);
-        System.out.println("Descrição: " + descricao);
-        System.out.println("Valor: " + valor);
-        System.out.println("ISBN: " + isbn);
-
-        if(this.temAutor()) {
-            autor.mostrarDetalhes();
-        }
-
-        System.out.println("--");
+    @Override
+    public String toString() {
+        return "Nome: " + nome 
+        + "\nDescrição: " + descricao
+        + "\nValor: " + valor 
+        + "\nISBN: " + isbn;
     }
 
     boolean temAutor() {
