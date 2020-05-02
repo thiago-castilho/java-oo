@@ -16,7 +16,7 @@ public class RegistroDeVendas {
         fisico.setNome("Test Driven Development");
         fisico.setValor(59.90);
 
-        Ebook ebook = new Ebook(null);
+        Ebook ebook = new Ebook(autor);
         ebook.setNome("Test Driven Development");
         ebook.setValor(29.90);
 
@@ -31,15 +31,13 @@ public class RegistroDeVendas {
 
         Produto[] produtos = carrinho.getProdutos();
 
-        // for(Produto produto : produtos) {
-        for (int i = 0; i <= produtos.length; i++) {
+        for(Produto produto : produtos) {
             try {
-                Produto produto = produtos[i];
                 if (produto != null) {
                     System.out.println("Total: " + produto.getValor());
                 }
             } catch (ArrayIndexOutOfBoundsException e) {
-                System.out.println("Deu exception no indice:  " + i);
+                System.out.println("A verificação ultrapassou o tamanho total do Array.");
             } catch (NullPointerException e) {
                 System.out.println("Array não foi instanciado!");
             }

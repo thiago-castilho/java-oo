@@ -29,4 +29,9 @@ public class Ebook extends Livro implements Promocional {
         return this.waterMark;
     }
 
+    @Override
+    public String  toString() {
+        return "Eu sou um ebook";
+    }
+
 }
