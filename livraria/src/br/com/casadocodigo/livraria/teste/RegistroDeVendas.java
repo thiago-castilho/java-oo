@@ -1,5 +1,7 @@
 package br.com.casadocodigo.livraria.teste;
 
+import java.util.List;
+
 import br.com.casadocodigo.livraria.Autor;
 import br.com.casadocodigo.livraria.CarrinhoDeCompras;
 import br.com.casadocodigo.livraria.produtos.Ebook;
@@ -29,7 +31,7 @@ public class RegistroDeVendas {
 
         System.out.println("Total: " + carrinho.getTotal());
 
-        Produto[] produtos = carrinho.getProdutos();
+        List<Produto> produtos = carrinho.getProdutos();
 
         for(Produto produto : produtos) {
             try {
