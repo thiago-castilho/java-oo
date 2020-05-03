@@ -21,5 +21,4 @@ public class LivroFisico extends Livro implements Promocional {
         System.out.println("aplicando desconto no Livro");
         return true;
     }
-
 }

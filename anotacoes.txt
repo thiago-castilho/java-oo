@@ -370,3 +370,25 @@ Alguns dos mais de 60 métodos:
     boolean endsWith = string.endsWith("a");
     boolean startsWith = string.startsWith("s");
     boolean equals = string.equalsIgnoreCase("JAVA");
+
+
+=====================================================================
+========================= CAPÍTULO 11 ===============================
+=====================================================================
+
+Manipular arrays não é uma tarefa básica, por isso, foi criada a collection ArrayList, que facilita muito no manuseio. Esta classe possui métodos genéricos, portanto, o seguinte código compila:
+    ArrayList lista = new ArrayList();
+    lista.add(10);
+    lsita.add("uma string");
+    lista.add(new Revista());
+
+Como já é sabido do problema receber um Object, devido ao casting, podemos restringir um tipo para nossa lista. Funciona da seguinte forma: 
+    ArrayList<Produto> produtos = new ArrayList<Produto>();
+
+    Este recurso é conhecido como Diamond Operator.
+
+Além do ArrayList, existe também o LinkedList. Cada um tem sua vantagem, vale conhecer os dois para tomar uma melhor decisão na hora de implantar.
+
+O que ambas têm em comum, é a interface List.
+
+Para compara um tipo, pordemos adicionar em nossa interface a classe Comparable<T>. Uma interface não implementa a outra, e sim extende. Ao implementá-lo, nota-se que temos o Diamond Operator... Devemos colocar um tipo para que possamos evitar o casting no método que seremos obrigados a implementar (no caso, o compareTo(Object))

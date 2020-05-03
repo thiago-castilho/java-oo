@@ -31,6 +31,25 @@ public abstract class Livro implements Produto {
         + "\nISBN: " + isbn;
     }
 
+    @Override
+    public int compareTo(Produto outro) {
+
+        return (int) (this.getValor() - outro.getValor());
+
+        // Forma verbosa: 
+        
+        // if (this.getValor() < outro.getValor()) {
+            // Retorna 1 se o objeto comparado for menor que este objeto. (deve vir antes na ordenação)
+            // return -1;
+        // }
+        // if (this.getValor() > outro.getValor()) {
+            // Retorna 1 se o objeto comparado for maior que este objeto. (deve vir depois na ordenação)
+            // return 1;
+        // }
+        // Retorna 0 se o objeto comparado for igual a este objeto.
+        // return 0;
+    }
+
     boolean temAutor() {
         return this.autor != null;
     }
