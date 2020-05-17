@@ -392,3 +392,34 @@ Além do ArrayList, existe também o LinkedList. Cada um tem sua vantagem, vale 
 O que ambas têm em comum, é a interface List.
 
 Para compara um tipo, pordemos adicionar em nossa interface a classe Comparable<T>. Uma interface não implementa a outra, e sim extende. Ao implementá-lo, nota-se que temos o Diamond Operator... Devemos colocar um tipo para que possamos evitar o casting no método que seremos obrigados a implementar (no caso, o compareTo(Object))
+
+
+java.util.Set: é uma coleção, assim como List, porém, em seu conjunto não há repetições em seus dados internos. E assim como uma List, Set também é uma interface.
+ 
+Para utilizar um Set, devemos implementar um HashSet. 
+
+Uma observação, é que não importa quantos itens repetidos sejam adicionados, o hash sempre identificará e contará como um. Como no exemplo:
+    Set<String> hash = new HashSet<String>();
+        
+    hash.add("Não há repetições em Conjuntos.");
+    hash.add("Não há repetições em Conjuntos.");
+    hash.add("Não há repetições em Conjuntos.");
+    hash.add("Não há repetições em Conjuntos.");
+    hash.add("Não há repetições em Conjuntos.");
+
+    System.out.println(hash.size());
+
+A saída será 1.
+
+HashSet é muito mais rápido que List, conforme resultado no teste que fiz:
+    // Saída com List: Demorou 21864 MS para executar
+    // Saída com HashSet: Demorou 35 MS para executar 
+
+java.util.Map: Um Map é composto por um conjunto (Set) de chaves associadas a um objeto valor.
+Exemplo de implantação:
+    Map<String, double> mapa = new HashMap<>();
+    mapa.put("CUP982", 5.99);
+
+    // Para recuperar este valor:
+    Double valor = mapa.get("CUP982");
+    System.out.println(valor);
