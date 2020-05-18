@@ -1,8 +1,5 @@
 package br.com.casadocodigo.livraria.teste;
 
-import java.util.HashSet;
-import java.util.Set;
-
 import br.com.casadocodigo.livraria.GerenciadorDeCupons;
 
 public class ConsultaDeDescontos {
