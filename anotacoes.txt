@@ -427,4 +427,8 @@ Exemplo de implantação:
 =====================================================================
 ========================= CAPÍTULO 12 ===============================
 =====================================================================
+- Lambda
+- Stream
 
+http://docs.oracle.com/javase/8/docs/api/java/util/stream/Stream.html
+http://blog.caelum.com.br/o-minimo-que-voce-deve-saber-de-java-8/
