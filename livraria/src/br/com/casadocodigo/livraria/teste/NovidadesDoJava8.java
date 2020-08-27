@@ -88,7 +88,10 @@ public class NovidadesDoJava8 {
         
 
         // FILTRANDO NO JAVA 8 COM STREAM
-        livros.stream().filter(l -> l.getNome().contains("Java"));
+        livros
+            .stream()
+            .filter(l -> l.getNome().contains("Java"))
+            .forEach(l -> System.out.println(l.getNome()));
 
         for(Livro livro : livros) {
             System.out.println(livro.getNome());
